@@ -1,0 +1,47 @@
+login = ["vadim003", "vlad032", "dimon213", "kirill228"] #логини
+password = ["vadim003", "vlad032", "dimon213", "kirill228"] #пароли
+
+#список оцінок
+grade_vadim003 = [12, 3, 2, 11]
+grade_vlad032 = [4, 7, 1, 12]
+grade_dimon213 = [6, 5, 4, 10]
+grade_kirill228 = [8, 9, 10, 11]
+
+#цикл
+while True:
+    user_login = input("Введіть логін:")
+    user_password = input("Введіть пароль:")
+
+    user_grade = []
+
+    if user_login == login[0] and user_password == password[0]: #підстановка значень
+        user_grade = grade_vadim003
+    elif user_login == login[1] and user_password == password[1]:
+        user_grade = grade_vlad032
+    elif user_login == login[2] and user_password == password[2]:
+        user_grade = grade_dimon213
+    elif user_login == login[3] and user_password == password[3]:
+        user_grade = grade_kirill228
+
+    if user_grade != []:
+        print("Вхід виконано!")
+        print("Ваші оцінки:", user_grade)
+
+    else:
+        print("Неправильний логін або пароль!")
+    break
+
+#кількість задовільних і незадовільних оцінок
+satisfatory_count = 0
+unsatisfactory_count = 0
+
+#вираховує скількі задовільних і незадовільних оцінок
+for grade in user_grade:
+            if 5 <= grade <= 12:
+                satisfatory_count += 1
+            elif 1 <= grade <= 4:
+                unsatisfactory_count += 1
+
+print(f"Кількість задовільних оцінок: {satisfatory_count}")
+print(f"Кількість незадовільних оцінок: {unsatisfactory_count}")
+print("-" * 30) # Розділювач для краси
